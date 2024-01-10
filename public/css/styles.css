@@ -1,0 +1,155 @@
+/* public/css/styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+    color: #fff;
+    animation: gradientAnimation 10s infinite linear;
+    background:
+            linear-gradient(to right, #2c3e50, #4ca1af),
+            linear-gradient(to left, #2c3e50, #4ca1af),
+            linear-gradient(to top, #2c3e50, #4ca1af),
+            linear-gradient(to bottom, #2c3e50, #4ca1af);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(255, 255, 0, 0.5);
+    color: #fff;
+}
+
+#username-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#username {
+    margin-right: 10px;
+    padding: 12px;
+    border: none;
+    background: #34495e;
+    color: #ecf0f1;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+#username-display {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#chat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 300px;
+    border-radius: 15px;
+}
+
+#messages li {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.sender {
+    background-color: #2ecc71;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.receiver {
+    background-color: #3498db;
+    color: #fff;
+    align-self: flex-start;
+}
+
+#form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#m {
+    padding: 15px;
+    border: 1px solid #6A5ACD;
+    border-radius: 20px;
+    margin-top: 15px;
+    width: 70%;
+    background: #34495e;
+    color: #ecf0f1;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    background: linear-gradient(135deg, #3498db, #9b59b6, #1abc9c);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 70%;
+    font-size: 16px;
+}
+
+.flash-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 5px;
+    animation: flash 0.5s ease-in-out;
+    font-size: 14px;
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.system-message {
+    color: #777;
+    text-align: center;
+    font-size: 14px;
+}
